@@ -1,0 +1,19 @@
+import React from react;
+
+const EntryList = ({ entries }) = {
+  return (
+    div
+      {entries.length === 0 && No Entries}
+      {entries.map((entry) = {
+        return (
+          div key={Math.random()  1000}
+            p{entry.name}p
+            p{entry.image}p
+          div
+        );
+      })}
+    div
+  );
+};
+
+export default EntryList;

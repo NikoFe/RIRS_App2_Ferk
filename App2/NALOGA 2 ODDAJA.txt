@@ -1,0 +1,62 @@
+MUDA 8 potrat NE pozab še to povezati z kpi
+
+vsi kpi-ji v stolpcih in v vrsticah vseh 8 potrat, ki si jih naštel
+
+Če imaš kpi, ki v stolpcu nima X pomisli ponovno o tem
+
+tista potrata, ki ima doti kpi stolpcev, ta ima večjo prioriteto
+
+TO BE začnemo 19.
+
+ANALIZA ROOT CAUSE za 3 problem (3 fish bone, 3 IS IS-NOT, 3 5-WHY)
+
+Power Automate še ne rabiš zdaj narediti, to bo na koncu ocenjeno
+
+
+
+
+NALOGA tveganje:
+
+Snami matriko tveganja
+
+1. opravitie FMEA analiza (vpliv različnih težav, ki vključuje kup lastnosti), ni nujno vse izpolniti v OCC urence in DET ection izpolni ter SEV
+
+Pri SEV 0 do 10 kako esne so napake
+
+OCC = occurence kako verjetno je da bomo to opazili
+
+OCCurene =  10= zelotežko bom to opazil (1 = hitro lahko opazimo), višja kot je težje bomo to opazili in bolj resna bo težava ( od 0 do 10)
+
+
+Efekt tudi izpolni ter Potential causes
+
+
+IZPOLNE VSE TISTO KAR JE IZPOLNJENO V EXCEL datoteki
+
+
+RPN = kako kritično je ta napaka  (npr. 315 in 336 sta si blizu, ti dve bosta zelo vplivala na to)
+
+
+KO boš vse to opravil lahko v excel ustvariš mRISK matrix 
+
+
+V matriki vzrokov in posledic, KPIV bodo vhodi
+
+1 do 10 uteži izhode na vrhu predstavljajo kako pomembno je to to potrošniku
+
+
+odspodaj pa v vrsticah napišeš koliko kPIV vplivajo na tiste stolpce
+
+TE matrike na koncu dati 
+
+Ven iz tega na koncu najpade 5 idej kako lahko to izboljšati.
+
+
+Lahko vstaviš kar potrate na
+
+
+Power Automate lahko v Januar narediš
+
+V Januraja bodo zagovori
+
+V torek lahko tudi prideš če imaš kaka vprašanja

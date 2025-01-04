@@ -1,0 +1,34 @@
+  /*const [entries, setEntries] = useState(() => {
+    const returned = localStorage.getItem("entries");
+    if (returned == null) return [];
+    return JSON.parse(returned);
+  });*/
+
+
+  /*
+  useEffect(() => {
+    localStorage.setItem("entries", JSON.stringify(entries));
+  }, [entries]);
+*/
+
+
+
+  const updateEntry = (id, usernameParam) => {
+    console.log("updating!: " + id + "/" + entries.entryID);
+    if (username == usernameParam) {
+      alert("WORKE");
+    } else {
+      alert("DENIED");
+      return;
+    }
+  };
+
+  const deleteEntry = (id, usernameParam) => {
+    console.log("deleting!: " + id + "/" + entries.entryID);
+    if (username == usernameParam) {
+      setEntries(entries.filter((entries) => entries.entryID !== id));
+    } else {
+      alert("DENIED");
+      return;
+    }
+  };

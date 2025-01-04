@@ -1,0 +1,41 @@
+import React from "react";
+import InputRow from "./InputRow";
+import { useEffect, useState } from "react";
+
+const InputList = () => {
+  // const [inputRows, setInputRows] = useState([""]);
+
+  const [inputRows, setInputRows] = useState(() => {
+    const returned = localStorage.getItem("inputRows");
+    //   return [];
+    if (returned == null) return [""];
+    return JSON.parse(returned);
+  });
+
+  const Add = () => {
+    console.log("adding!: ");
+    // Replace the state
+    setInputRows([...inputRows, ""]);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("inputRows", JSON.stringify(inputRows));
+  }, [inputRows]);
+
+  const create = () => {
+    //WIP
+  };
+
+  return (
+    <div className="input_list_div">
+      {" "}
+      {inputRows.map((row) => {
+        return <InputRow key={Math.random() * 100}></InputRow>;
+      })}
+      <button onClick={Add}> Add </button>
+      <button onClick={create()}>SUBMIT</button>
+    </div>
+  );
+};
+
+export default InputList;

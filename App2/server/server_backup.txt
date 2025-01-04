@@ -1,0 +1,99 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const PORT = 5000;
+const mysql = require("mysql2");
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "artholus6*Databa5e",
+  database: "express",
+});
+
+connection.connect();
+
+connection.query("SELECT * FROM entries", (err, rows, fields) => {
+  if (err) {
+    throw err;
+
+    return;
+  }
+  console.log("Rows returned:", rows);
+  //  console.log("The solution is: ", rows[0].solution);
+});
+
+connection.end();
+
+let entries = [];
+
+app.use(cors());
+app.use(express.json()); //middleware to convert body to json
+
+app.get("/", (req, res) => {
+  res.status(200).send({
+    message: " SUCCESS",
+  });
+});
+
+let currentId = 1;
+/*
+entryID: Math.random() * 1000,
+username: username,
+image: image,
+values: values,
+onDelete: deleteEntry,*/
+
+app.post("/entries", (req, res) => {
+  const newEntry = { id: currentId++, ...req.body };
+  entries.push(newEntry);
+  res.status(201).json(newEntry);
+});
+
+app.get("/entries", (req, res) => {
+  res.json(entries);
+  /*PREVIOUS:
+  res.status(200).json([
+    {
+      entryID: 9999,
+      username: "username",
+      image: "image",
+      values: [{ key: "k11" }, { key: "k12" }],
+      onDelete: "null",
+    },
+    {
+      entryID: 1111,
+      username: "username",
+      image: "image",
+      values: [{ key: "k21" }, { key: "k22" }],
+      onDelete: "null",
+    }
+  ]);
+*/
+});
+
+/*
+app.get("/tshirt", (req, res) => {
+  res.status(200).send({
+    tshirt: "aaa",
+    size: "large",
+  });
+});*/
+
+/*
+app.post("/tshirt/:id", (req, res) => {
+  const { id } = req.params;
+
+  const { logo } = req.body;
+
+  if (!logo) {
+    res.status(418).send({
+      message: "logo paramater missing!",
+    });
+  }
+  res.send({
+    tshirt: "success",
+  });
+});*/
+
+app.listen(PORT, () => console.log("Listening..."));
