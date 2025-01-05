@@ -59,7 +59,7 @@ app.post("/entries", async (req, res) => {
 
   try {
     // Step 1: Fetch user_id
-    const userQuery = `SELECT id FROM user WHERE name ='${username}'`;
+    const userQuery = `SELECT username FROM user WHERE username ='${username}'`;
     const userResults = await new Promise((resolve, reject) => {
       connection.query(userQuery, (error, results) => {
         if (error) return reject(error);
@@ -75,8 +75,9 @@ app.post("/entries", async (req, res) => {
 
     console.log("Fetched User ID:", user_id);*/
 
-    // Step 2: Insert into entry table
-    const entryQuery = `INSERT INTO entry VALUES (${name}, '${values}', ${username})`;
+    // Step 2: Insert into entry table              ${name}'  ${username}
+
+    const entryQuery = `INSERT INTO entry VALUES ('${uuidv4()}', '${values}', 'a')`;
     await new Promise((resolve, reject) => {
       connection.query(entryQuery, (error, results) => {
         if (error) return reject(error);
@@ -115,7 +116,7 @@ app.get("/entries", (req, res) => {
 app.post("/sign_in", (req, res) => {
   const { username, password } = req.body;
   //console.log("USERNAME: ", username, " PASSWORD: ", password);
-  const query = `SELECT * FROM user WHERE name= '${username}' AND password='${password}' `;
+  const query = `SELECT * FROM user WHERE username= '${username}' AND password='${password}' `;
 
   connection.query(query, (err, results) => {
     if (err) {

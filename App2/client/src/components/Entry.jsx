@@ -35,7 +35,6 @@ const Entry = ({ entryID, name, image, values, onDelete, onUpdate }) => {
   return (
     <div>
       <div>
-        <p>ID: {entryID}</p>
         <p>name: {name}</p>
         <p>username:{username} </p>
         <p></p>
